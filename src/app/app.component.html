@@ -20,11 +20,15 @@
           </div>
           <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
       </form>
-      
+
     </div>
 
     <div class="col-md-9">
       <app-todos [data]="todos | async"></app-todos>
+    </div>
+
+    <div>
+      <assessment-tag></assessment-tag>
     </div>
 
   </div>

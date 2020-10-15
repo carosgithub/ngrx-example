@@ -8,6 +8,8 @@ import { TodoModule } from 'app/todo/todo.module';
 
 import { AppComponent } from './app.component';
 
+import { AssessmentModule } from "../assessment/assessment.module";
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +22,8 @@ import { AppComponent } from './app.component';
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25
-    })
+    }),
+    AssessmentModule
   ],
   providers: [],
   bootstrap: [AppComponent]
