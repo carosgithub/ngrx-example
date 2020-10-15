@@ -25,15 +25,15 @@ import * as fromTodos from '../todo/reducers/todos';
 
         <div class="row">
           <div class="col-md-12 text-center">
-              <h1>My Todo App</h1>
-              <p>Just a simple todo app created using ngrx</p>
+              <h1>My Assessment App</h1>
+              <p>Just a simple assessment app created using ngrx</p>
           </div>
         </div>
 
         <div class="row">
 
           <div class="col-md-3">
-            <h5>Todo:</h5>
+            <h5>New Assessment:</h5>
 
             <form (submit)="onSubmit(form)" [formGroup]="form">
                 <input type="hidden" class="form-control" id="id" formControlName="id"/>
