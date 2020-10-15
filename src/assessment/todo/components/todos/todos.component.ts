@@ -4,10 +4,13 @@ import {
   Input
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Todo } from 'app/todo/models/todo';
+//import { Todo } from 'app/todo/models/todo';
+import { Todo } from "../../models/todo";
 
-import * as todo from 'app/todo/actions/todo';
-import * as fromTodo from 'app/todo/reducers/todos';
+//import * as todo from 'app/todo/actions/todo';
+//import * as fromTodo from 'app/todo/reducers/todos';
+import * as todo from '../../actions/todo';
+import * as fromTodo from '../../reducers/todos';
 
 @Component({
   selector: 'app-todos',

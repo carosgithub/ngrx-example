@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
-import { Todo } from 'app/todo/models/todo';
+//import { Todo } from 'app/todo/models/todo';
+import { Todo } from "../models/todo";
 
 /**
  * All the constants to define our actions
@@ -57,11 +58,11 @@ export class Select implements Action {
     constructor(public id: number) {}
 }
 
-export type Actions = 
-                Save | 
-                Add | 
+export type Actions =
+                Save |
+                Add |
                 AddTodoSuccess |
-                Edit | 
-                Delete | 
-                Complete | 
+                Edit |
+                Delete |
+                Complete |
                 Select;
