@@ -17,7 +17,7 @@ export class AssessmentEffects {
      */
     @Effect()
     $save = this.actions
-        .ofType<todo.Save>(todo.SAVE_TODO)
+        .ofType<todo.Save>(todo.SAVE_QRTP)
         .map(action => action.todo)
         .switchMap(data => {
             let action: Action;
@@ -36,7 +36,7 @@ export class AssessmentEffects {
      */
     @Effect()
     $add = this.actions
-        .ofType<todo.Add>(todo.ADD_TODO)
+        .ofType<todo.Add>(todo.ADD_QRTP)
         .map(action => action.todo)
         .switchMap((data) => {
             // this dumb implementation in real world can be a http request

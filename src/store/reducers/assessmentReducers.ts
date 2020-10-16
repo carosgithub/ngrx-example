@@ -28,29 +28,29 @@ export function reducer(
 
     switch(action.type) {
 
-        case todo.ADD_TODO_SUCCESS: {
+        case todo.ADD_QRTP_SUCCESS: {
             return adapter.addOne(action.todo, state);
         }
 
-        case todo.EDIT_TODO: {
+        case todo.EDIT_QRTP: {
             return adapter.updateOne({
                 id: action.id,
                 changes: action.changes
             }, state);
         }
 
-        case todo.DELETE_TODO: {
+        case todo.DELETE_QRTP: {
             return adapter.removeOne(action.id, state);
         }
 
-        case todo.COMPLETE_TODO: {
+        case todo.COMPLETE_QRTP: {
             return adapter.updateOne({
                 id: action.id,
                 changes: { complete: !state.entities[action.id].complete }
             }, state);
         }
 
-        case todo.SELECT_TODO: {
+        case todo.SELECT_QRTP: {
             return {
                 ...state,
                 selectedTodoId: action.id
