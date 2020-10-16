@@ -6,8 +6,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { TodoComponent } from './components/todo/todo.component';
 import { TodosComponent } from './components/todos/todos.component';
 
-import { TodoEffects } from "./effects/todos";
-import * as todos from "./reducers/todos";
+import { TodoEffects } from "../../store/effects/todos";
+import * as todos from "../../store/reducers/todos";
 
 @NgModule({
   imports: [

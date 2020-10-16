@@ -1,7 +1,7 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
-import { Todo } from "../models/todo";
+import { Todo } from "../../models/todo";
 import * as todo from '../actions/todo';
 
 // create new state based on EntityState

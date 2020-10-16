@@ -11,12 +11,13 @@ import {
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 //import { Todo } from 'app/todo/models/todo';
-import { Todo } from "../todo/models/todo";
+import { Todo } from "../../models/todo";
 
 //import * as todo from 'app/todo/actions/todo';
 //import * as fromTodos from 'app/todo/reducers/todos';
-import * as todo from '../todo/actions/todo';
-import * as fromTodos from '../todo/reducers/todos';
+//import * as todo from '../todo/actions/todo';
+import * as todo from '../../store/actions/todo'
+import * as fromTodos from '../../store/reducers/todos';
 
 @Component({
   selector: 'assessment-tag',
