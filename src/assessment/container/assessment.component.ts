@@ -13,6 +13,7 @@ import { Observable } from 'rxjs/Observable';
 import { Assessment } from "../../models/assessment";
 import * as fromActions from '../../store/actions/assessmentActions'
 import * as fromReducers from '../../store/reducers/assessmentReducers';
+import * as fromSelectors from '../../store/selectors/assessment.selectors'
 
 @Component({
   selector: 'assessment-tag',
@@ -43,7 +44,7 @@ import * as fromReducers from '../../store/reducers/assessmentReducers';
           </div>
 
           <div class="col-md-9">
-            <app-assessments [data]="assessments | async"></app-assessments>
+            <app-assessments [data]="assessments$ | async"></app-assessments>
           </div>
 
         </div>
@@ -57,7 +58,7 @@ export class AssessmentTagComponent implements OnInit {
   /**
    * Observable list of assessment
    */
-  assessments: Observable<Assessment[]>;
+  assessments$: Observable<Assessment[]>;
 
   /**
    * Reactive form
@@ -68,7 +69,7 @@ export class AssessmentTagComponent implements OnInit {
     private store: Store<fromReducers.State>,
     private formBuilder: FormBuilder
   ) {
-    this.assessments = store.select(fromReducers.getAssessmentsAll);
+    this.assessments$ = store.select(fromSelectors.getAssessmentsAll);
   }
 
   ngOnInit() {
@@ -80,7 +81,7 @@ export class AssessmentTagComponent implements OnInit {
     });
 
     // subscribe to receive selected assessment
-    this.store.select(fromReducers.getSelectedAssessment).subscribe(assessment => {
+    this.store.select(fromSelectors.getSelectedAssessment).subscribe(assessment => {
       if (!assessment) return;
 
       this.form.setValue(assessment);
