@@ -10,7 +10,7 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { Todo } from "../../models/assessment";
+import { Assessment } from "../../models/assessment";
 import * as todo from '../../store/actions/assessmentActions'
 import * as fromTodos from '../../store/reducers/assessmentReducers';
 
@@ -57,7 +57,7 @@ export class AssessmentTagComponent implements OnInit {
   /**
    * Observable list of todo
    */
-  todos: Observable<Todo[]>;
+  todos: Observable<Assessment[]>;
 
   /**
    * Reactive form
@@ -89,9 +89,9 @@ export class AssessmentTagComponent implements OnInit {
 
   /**
    * Submit the form
-   * @param { value, valid }: { value: Todo, valid: boolean }
+   * @param { value, valid }: { value: Assessment, valid: boolean }
    */
-  onSubmit({value, valid}: {value: Todo, valid: boolean}): void {
+  onSubmit({value, valid}: {value: Assessment, valid: boolean}): void {
     if (valid) {
       // dispatch new action
       this.store.dispatch(new todo.Save(value));

@@ -4,7 +4,7 @@ import {
   Input
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Todo } from "../../../models/assessment";
+import { Assessment } from "../../../models/assessment";
 import * as todo from '../../../store/actions/assessmentActions'
 import * as fromTodo from '../../../store/reducers/assessmentReducers';
 
@@ -19,7 +19,7 @@ export class AssessmentsComponent {
   /**
    * receive list of todo's
    */
-  @Input() data: Todo[];
+  @Input() data: Assessment[];
 
   constructor(
     private store: Store<fromTodo.State>

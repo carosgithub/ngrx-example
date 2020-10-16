@@ -3,7 +3,7 @@ import {
   Component,
   Input
 } from '@angular/core';
-import { Todo } from "../../../models/assessment";
+import { Assessment } from "../../../models/assessment";
 
 @Component({
   selector: 'app-todo',
@@ -16,6 +16,6 @@ export class AssessmentComponent {
   /**
    * Receive the todo
    */
-  @Input() todo: Todo;
+  @Input() todo: Assessment;
 
 }

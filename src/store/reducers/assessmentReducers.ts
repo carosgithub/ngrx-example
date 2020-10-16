@@ -1,17 +1,17 @@
 import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
-import { Todo } from "../../models/assessment";
+import { Assessment } from "../../models/assessment";
 import * as todo from '../actions/assessmentActions';
 
 // create new state based on EntityState
-export interface State extends EntityState<Todo> {
+export interface State extends EntityState<Assessment> {
     selectedTodoId: number | null;
 }
 
 // create new adapter
-export const adapter: EntityAdapter<Todo> = createEntityAdapter<Todo>({
-    selectId: (todo: Todo) => todo.id
+export const adapter: EntityAdapter<Assessment> = createEntityAdapter<Assessment>({
+    selectId: (todo: Assessment) => todo.id
 });
 
 // set the initial state of the app

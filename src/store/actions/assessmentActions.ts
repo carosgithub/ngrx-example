@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Todo } from "../../models/assessment";
+import { Assessment } from "../../models/assessment";
 
 /**
  * All the constants to define our actions
@@ -18,25 +18,25 @@ export const SELECT_QRTP = '[QRTP] select todo';
 export class Save implements Action {
     readonly type = SAVE_QRTP;
 
-    constructor(public todo: Todo) {}
+    constructor(public todo: Assessment) {}
 }
 
 export class Add implements Action {
     readonly type = ADD_QRTP;
 
-    constructor(public todo: Todo) {}
+    constructor(public todo: Assessment) {}
 }
 
 export class AddTodoSuccess implements Action {
     readonly type = ADD_QRTP_SUCCESS;
 
-    constructor(public todo: Todo) {}
+    constructor(public todo: Assessment) {}
 }
 
 export class Edit implements Action {
     readonly type = EDIT_QRTP;
 
-    constructor(public id: number, public changes: Partial<Todo>) {}
+    constructor(public id: number, public changes: Partial<Assessment>) {}
 }
 
 export class Delete implements Action {
