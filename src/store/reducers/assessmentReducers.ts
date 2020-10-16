@@ -6,7 +6,7 @@ import * as assessment from '../actions/assessmentActions';
 
 // create new state based on EntityState
 export interface State extends EntityState<Assessment> {
-    selectedTodoId: number | null;
+    selectedAssessmentId: number | null;
 }
 
 // create new adapter
@@ -16,7 +16,7 @@ export const adapter: EntityAdapter<Assessment> = createEntityAdapter<Assessment
 
 // set the initial state of the app
 export const initialState: State = adapter.getInitialState({
-    selectedTodoId: null,
+    selectedAssessmentId: null,
     ids: []
 })
 
@@ -53,7 +53,7 @@ export function reducer(
         case assessment.SELECT_QRTP: {
             return {
                 ...state,
-                selectedTodoId: action.id
+                selectedAssessmentId: action.id
             };
         }
 
@@ -64,7 +64,7 @@ export function reducer(
 
 }
 
-export const selectedId = (state: State) => state.selectedTodoId;
+export const selectedId = (state: State) => state.selectedAssessmentId;
 
 // selectors
 export const getTodosState = createFeatureSelector<State>('assessments');
@@ -78,7 +78,7 @@ export const getTodosEntitiesState = createSelector(
 );
 
 /**
- * Create new selector to watch change on selectedTodoId.
+ * Create new selector to watch change on selectedAssessmentId.
  * Feel lines above, you can see where we create the const selectedId
  */
 export const getSelectedId = createSelector(

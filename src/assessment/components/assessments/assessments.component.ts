@@ -34,7 +34,7 @@ export class AssessmentsComponent {
   }
 
   /**
-   * Dispatch a Select action to change the selectedTodoId
+   * Dispatch a Select action to change the selectedAssessmentId
    * This change will reflect on the selector 'getSelectedTodo' that
    * we created on reducers folder.
    * @param id number
