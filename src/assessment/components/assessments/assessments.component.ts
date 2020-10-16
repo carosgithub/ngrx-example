@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Assessment } from "../../../models/assessment";
-import * as assessment from '../../../store/actions/assessmentActions'
+import * as fromActions from '../../../store/actions/assessmentActions'
 import * as fromReducers from '../../../store/reducers/assessmentReducers';
 
 @Component({
@@ -30,7 +30,7 @@ export class AssessmentsComponent {
    * @param id number
    */
   changeStatus(id: number) {
-    this.store.dispatch(new assessment.Complete(id));
+    this.store.dispatch(new fromActions.Complete(id));
   }
 
   /**
@@ -40,7 +40,7 @@ export class AssessmentsComponent {
    * @param id number
    */
   edit(id: number) {
-    this.store.dispatch(new assessment.Select(id));
+    this.store.dispatch(new fromActions.Select(id));
   }
 
   /**
@@ -48,7 +48,7 @@ export class AssessmentsComponent {
    * @param id number
    */
   delete(id: number) {
-    this.store.dispatch(new assessment.Delete(id));
+    this.store.dispatch(new fromActions.Delete(id));
   }
 
 }
