@@ -3,7 +3,6 @@ import {
   Component,
   Input
 } from '@angular/core';
-//import { Todo } from 'app/todo/models/todo';
 import { Todo } from "../../../models/todo";
 
 @Component({
