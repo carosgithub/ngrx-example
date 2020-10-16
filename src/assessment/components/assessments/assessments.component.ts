@@ -9,7 +9,7 @@ import * as assessment from '../../../store/actions/assessmentActions'
 import * as fromTodo from '../../../store/reducers/assessmentReducers';
 
 @Component({
-  selector: 'app-todos',
+  selector: 'app-assessments',
   templateUrl: './assessments.component.html',
   styleUrls: ['./assessments.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush

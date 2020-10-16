@@ -9,12 +9,12 @@ import { AssessmentComponent } from './components/assessment/assessment.componen
 import { AssessmentsComponent } from './components/assessments/assessments.component';
 
 import { AssessmentEffects } from "../store/effects/assessmentEffects";
-import * as todos from "../store/reducers/assessmentReducers";
+import * as assessments from "../store/reducers/assessmentReducers";
 
 @NgModule({
   imports: [
     CommonModule,
-    StoreModule.forFeature('todos', todos.reducer),
+    StoreModule.forFeature('assessments', assessments.reducer),
     EffectsModule.forFeature([AssessmentEffects]),
     ReactiveFormsModule
   ],

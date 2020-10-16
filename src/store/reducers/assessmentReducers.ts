@@ -67,7 +67,7 @@ export function reducer(
 export const selectedId = (state: State) => state.selectedTodoId;
 
 // selectors
-export const getTodosState = createFeatureSelector<State>('todos');
+export const getTodosState = createFeatureSelector<State>('assessments');
 
 /**
  * Create new selector to watch changes on entities

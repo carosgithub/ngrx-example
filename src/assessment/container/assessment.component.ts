@@ -43,7 +43,7 @@ import * as fromTodos from '../../store/reducers/assessmentReducers';
           </div>
 
           <div class="col-md-9">
-            <app-todos [data]="todos | async"></app-todos>
+            <app-assessments [data]="assessments | async"></app-assessments>
           </div>
 
         </div>
@@ -57,7 +57,7 @@ export class AssessmentTagComponent implements OnInit {
   /**
    * Observable list of assessment
    */
-  todos: Observable<Assessment[]>;
+  assessments: Observable<Assessment[]>;
 
   /**
    * Reactive form
@@ -68,7 +68,7 @@ export class AssessmentTagComponent implements OnInit {
     private store: Store<fromTodos.State>,
     private formBuilder: FormBuilder
   ) {
-    this.todos = store.select(fromTodos.getTodosAll);
+    this.assessments = store.select(fromTodos.getTodosAll);
   }
 
   ngOnInit() {
