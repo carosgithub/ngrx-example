@@ -5,8 +5,8 @@ import { EffectsModule } from '@ngrx/effects';
 import { ReactiveFormsModule } from "@angular/forms";
 import { AssessmentTagComponent } from "./container/assessment.component";
 
-import { AssessmentComponent } from './components/todo/assessment.component';
-import { AssessmentsComponent } from './components/todos/assessments.component';
+import { AssessmentComponent } from './components/assessment/assessment.component';
+import { AssessmentsComponent } from './components/assessments/assessments.component';
 
 import { TodoEffects } from "../store/effects/todos";
 import * as todos from "../store/reducers/todos";
