@@ -24,4 +24,4 @@ import * as todos from "./reducers/todos";
     TodosComponent
   ]
 })
-export class TodoModule { }
+export class AssessmentComponentModule { }
