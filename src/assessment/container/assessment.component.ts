@@ -68,7 +68,7 @@ export class AssessmentTagComponent implements OnInit {
     private store: Store<fromTodos.State>,
     private formBuilder: FormBuilder
   ) {
-    this.assessments = store.select(fromTodos.getTodosAll);
+    this.assessments = store.select(fromTodos.getAssessmentsAll);
   }
 
   ngOnInit() {
@@ -80,7 +80,7 @@ export class AssessmentTagComponent implements OnInit {
     });
 
     // subscribe to receive selected assessment
-    this.store.select(fromTodos.getSelectedTodo).subscribe(assessment => {
+    this.store.select(fromTodos.getSelectedAssessment).subscribe(assessment => {
       if (!assessment) return;
 
       this.form.setValue(assessment);

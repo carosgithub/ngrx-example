@@ -6,7 +6,7 @@ import {
 import { Store } from '@ngrx/store';
 import { Assessment } from "../../../models/assessment";
 import * as assessment from '../../../store/actions/assessmentActions'
-import * as fromTodo from '../../../store/reducers/assessmentReducers';
+import * as fromReducers from '../../../store/reducers/assessmentReducers';
 
 @Component({
   selector: 'app-assessments',
@@ -22,7 +22,7 @@ export class AssessmentsComponent {
   @Input() data: Assessment[];
 
   constructor(
-    private store: Store<fromTodo.State>
+    private store: Store<fromReducers.State>
   ) {}
 
   /**
@@ -35,7 +35,7 @@ export class AssessmentsComponent {
 
   /**
    * Dispatch a Select action to change the selectedAssessmentId
-   * This change will reflect on the selector 'getSelectedTodo' that
+   * This change will reflect on the selector 'getSelectedAssessment' that
    * we created on reducers folder.
    * @param id number
    */

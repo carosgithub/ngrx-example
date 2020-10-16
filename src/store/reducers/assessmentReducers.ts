@@ -67,13 +67,13 @@ export function reducer(
 export const selectedId = (state: State) => state.selectedAssessmentId;
 
 // selectors
-export const getTodosState = createFeatureSelector<State>('assessments');
+export const getAssessmentsState = createFeatureSelector<State>('assessments');
 
 /**
  * Create new selector to watch changes on entities
  */
-export const getTodosEntitiesState = createSelector(
-    getTodosState,
+export const getAssessmentsEntitiesState = createSelector(
+    getAssessmentsState,
     state => state.entities
 );
 
@@ -82,7 +82,7 @@ export const getTodosEntitiesState = createSelector(
  * Feel lines above, you can see where we create the const selectedId
  */
 export const getSelectedId = createSelector(
-    getTodosState,
+    getAssessmentsState,
     selectedId
 );
 
@@ -92,18 +92,18 @@ export const getSelectedId = createSelector(
  * you have to create every selector you want.
  */
 export const {
-    selectIds: getTodosIds,
-    selectEntities: getTodosEntities,
-    selectAll: getTodosAll,
-    selectTotal: getTodosTotal
-} = adapter.getSelectors(getTodosState);
+    selectIds: getAssessmentsIds,
+    selectEntities: getAssessmentssEntities,
+    selectAll: getAssessmentsAll,
+    selectTotal: getAssessmentsTotal
+} = adapter.getSelectors(getAssessmentsState);
 
 /**
  * Create new selector to whatch changes on selectedId
  * and return the entity of that id
  */
-export const getSelectedTodo = createSelector(
-    getTodosEntitiesState,
+export const getSelectedAssessment = createSelector(
+    getAssessmentsEntitiesState,
     getSelectedId,
     (entities, id) => {
         return entities[id] || null
