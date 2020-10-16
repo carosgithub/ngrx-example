@@ -11,7 +11,7 @@ import { Todo } from "../../../models/todo";
   styleUrls: ['./assessment.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TodoComponent {
+export class AssessmentComponent {
 
   /**
    * Receive the todo

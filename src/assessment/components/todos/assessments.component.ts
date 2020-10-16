@@ -14,7 +14,7 @@ import * as fromTodo from '../../../store/reducers/todos';
   styleUrls: ['./assessments.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TodosComponent {
+export class AssessmentsComponent {
 
   /**
    * receive list of todo's
