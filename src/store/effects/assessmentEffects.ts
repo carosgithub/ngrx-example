@@ -18,7 +18,7 @@ export class AssessmentEffects {
     @Effect()
     $save = this.actions
         .ofType<assessmentActions.Save>(assessmentActions.SAVE_QRTP)
-        .map(action => action.todo)
+        .map(action => action.assessment)
         .switchMap(data => {
             let action: Action;
             if (!data.id) {
@@ -37,7 +37,7 @@ export class AssessmentEffects {
     @Effect()
     $add = this.actions
         .ofType<assessmentActions.Add>(assessmentActions.ADD_QRTP)
-        .map(action => action.todo)
+        .map(action => action.assessment)
         .switchMap((data) => {
             // this dumb implementation in real world can be a http request
             data.id = new Date().getMilliseconds();

@@ -6,7 +6,7 @@ import {
 import { Assessment } from "../../../models/assessment";
 
 @Component({
-  selector: 'app-todo',
+  selector: 'app-assessment',
   templateUrl: './assessment.component.html',
   styleUrls: ['./assessment.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -14,8 +14,8 @@ import { Assessment } from "../../../models/assessment";
 export class AssessmentComponent {
 
   /**
-   * Receive the todo
+   * Receive the assessment
    */
-  @Input() todo: Assessment;
+  @Input() assessment: Assessment;
 
 }

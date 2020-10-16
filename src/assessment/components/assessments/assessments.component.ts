@@ -5,7 +5,7 @@ import {
 } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Assessment } from "../../../models/assessment";
-import * as todo from '../../../store/actions/assessmentActions'
+import * as assessment from '../../../store/actions/assessmentActions'
 import * as fromTodo from '../../../store/reducers/assessmentReducers';
 
 @Component({
@@ -17,7 +17,7 @@ import * as fromTodo from '../../../store/reducers/assessmentReducers';
 export class AssessmentsComponent {
 
   /**
-   * receive list of todo's
+   * receive list of assessment's
    */
   @Input() data: Assessment[];
 
@@ -26,11 +26,11 @@ export class AssessmentsComponent {
   ) {}
 
   /**
-   * Dispatch a Complete action to change the todo status
+   * Dispatch a Complete action to change the assessment status
    * @param id number
    */
   changeStatus(id: number) {
-    this.store.dispatch(new todo.Complete(id));
+    this.store.dispatch(new assessment.Complete(id));
   }
 
   /**
@@ -40,7 +40,7 @@ export class AssessmentsComponent {
    * @param id number
    */
   edit(id: number) {
-    this.store.dispatch(new todo.Select(id));
+    this.store.dispatch(new assessment.Select(id));
   }
 
   /**
@@ -48,7 +48,7 @@ export class AssessmentsComponent {
    * @param id number
    */
   delete(id: number) {
-    this.store.dispatch(new todo.Delete(id));
+    this.store.dispatch(new assessment.Delete(id));
   }
 
 }

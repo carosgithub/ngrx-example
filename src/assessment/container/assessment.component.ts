@@ -11,7 +11,7 @@ import {
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Assessment } from "../../models/assessment";
-import * as todo from '../../store/actions/assessmentActions'
+import * as assessment from '../../store/actions/assessmentActions'
 import * as fromTodos from '../../store/reducers/assessmentReducers';
 
 @Component({
@@ -55,7 +55,7 @@ import * as fromTodos from '../../store/reducers/assessmentReducers';
 export class AssessmentTagComponent implements OnInit {
 
   /**
-   * Observable list of todo
+   * Observable list of assessment
    */
   todos: Observable<Assessment[]>;
 
@@ -79,11 +79,11 @@ export class AssessmentTagComponent implements OnInit {
       complete: ['']
     });
 
-    // subscribe to receive selected todo
-    this.store.select(fromTodos.getSelectedTodo).subscribe(todo => {
-      if (!todo) return;
+    // subscribe to receive selected assessment
+    this.store.select(fromTodos.getSelectedTodo).subscribe(assessment => {
+      if (!assessment) return;
 
-      this.form.setValue(todo);
+      this.form.setValue(assessment);
     });
   }
 
@@ -94,7 +94,7 @@ export class AssessmentTagComponent implements OnInit {
   onSubmit({value, valid}: {value: Assessment, valid: boolean}): void {
     if (valid) {
       // dispatch new action
-      this.store.dispatch(new todo.Save(value));
+      this.store.dispatch(new assessment.Save(value));
       this.form.reset();
     }
   }

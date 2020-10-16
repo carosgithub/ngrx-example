@@ -4,13 +4,13 @@ import { Assessment } from "../../models/assessment";
 /**
  * All the constants to define our actions
  */
-export const SAVE_QRTP = '[QRTP] save todo';
-export const ADD_QRTP = '[QRTP] add todo';
-export const ADD_QRTP_SUCCESS = '[QRTP] add todo success';
-export const EDIT_QRTP = '[QRTP] edit todo';
-export const DELETE_QRTP = '[QRTP] delete todo';
-export const COMPLETE_QRTP = '[QRTP] done todo';
-export const SELECT_QRTP = '[QRTP] select todo';
+export const SAVE_QRTP = '[QRTP] save assessment';
+export const ADD_QRTP = '[QRTP] add assessment';
+export const ADD_QRTP_SUCCESS = '[QRTP] add assessment success';
+export const EDIT_QRTP = '[QRTP] edit assessment';
+export const DELETE_QRTP = '[QRTP] delete assessment';
+export const COMPLETE_QRTP = '[QRTP] done assessment';
+export const SELECT_QRTP = '[QRTP] select assessment';
 
 /**
  * Implementation of all actions that we are handle
@@ -18,19 +18,19 @@ export const SELECT_QRTP = '[QRTP] select todo';
 export class Save implements Action {
     readonly type = SAVE_QRTP;
 
-    constructor(public todo: Assessment) {}
+    constructor(public assessment: Assessment) {}
 }
 
 export class Add implements Action {
     readonly type = ADD_QRTP;
 
-    constructor(public todo: Assessment) {}
+    constructor(public assessment: Assessment) {}
 }
 
 export class AddTodoSuccess implements Action {
     readonly type = ADD_QRTP_SUCCESS;
 
-    constructor(public todo: Assessment) {}
+    constructor(public assessment: Assessment) {}
 }
 
 export class Edit implements Action {

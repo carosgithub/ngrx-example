@@ -7,13 +7,13 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let todo of data" >
-            <td><input type="checkbox" [checked]="todo.complete" (change)="changeStatus(todo.id)" /></td>
-            <td><app-todo [todo]="todo"></app-todo></td>
+        <tr *ngFor="let assessment of data" >
+            <td><input type="checkbox" [checked]="assessment.complete" (change)="changeStatus(assessment.id)" /></td>
+            <td><app-assessment [assessment]="assessment"></app-assessment></td>
             <td>
-                <ng-container *ngIf="!todo.complete">
-                    <button type="button" class="btn btn-sm btn-outline-info" (click)="edit(todo.id)"><i class="fa fa-pencil"></i></button>
-                    <button type="button" class="btn btn-sm btn-danger" (click)="delete(todo.id)"><i class="fa fa-trash"></i></button>
+                <ng-container *ngIf="!assessment.complete">
+                    <button type="button" class="btn btn-sm btn-outline-info" (click)="edit(assessment.id)"><i class="fa fa-pencil"></i></button>
+                    <button type="button" class="btn btn-sm btn-danger" (click)="delete(assessment.id)"><i class="fa fa-trash"></i></button>
                 </ng-container>
             </td>
         </tr>

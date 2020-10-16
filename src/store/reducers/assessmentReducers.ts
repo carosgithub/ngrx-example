@@ -2,7 +2,7 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 import { Assessment } from "../../models/assessment";
-import * as todo from '../actions/assessmentActions';
+import * as assessment from '../actions/assessmentActions';
 
 // create new state based on EntityState
 export interface State extends EntityState<Assessment> {
@@ -11,7 +11,7 @@ export interface State extends EntityState<Assessment> {
 
 // create new adapter
 export const adapter: EntityAdapter<Assessment> = createEntityAdapter<Assessment>({
-    selectId: (todo: Assessment) => todo.id
+    selectId: (assessment: Assessment) => assessment.id
 });
 
 // set the initial state of the app
@@ -23,34 +23,34 @@ export const initialState: State = adapter.getInitialState({
 // this function is called after every execution of a action
 export function reducer(
     state = initialState,
-    action: todo.Actions
+    action: assessment.Actions
 ): State {
 
     switch(action.type) {
 
-        case todo.ADD_QRTP_SUCCESS: {
-            return adapter.addOne(action.todo, state);
+        case assessment.ADD_QRTP_SUCCESS: {
+            return adapter.addOne(action.assessment, state);
         }
 
-        case todo.EDIT_QRTP: {
+        case assessment.EDIT_QRTP: {
             return adapter.updateOne({
                 id: action.id,
                 changes: action.changes
             }, state);
         }
 
-        case todo.DELETE_QRTP: {
+        case assessment.DELETE_QRTP: {
             return adapter.removeOne(action.id, state);
         }
 
-        case todo.COMPLETE_QRTP: {
+        case assessment.COMPLETE_QRTP: {
             return adapter.updateOne({
                 id: action.id,
                 changes: { complete: !state.entities[action.id].complete }
             }, state);
         }
 
-        case todo.SELECT_QRTP: {
+        case assessment.SELECT_QRTP: {
             return {
                 ...state,
                 selectedTodoId: action.id
