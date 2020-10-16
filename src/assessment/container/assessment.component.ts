@@ -35,7 +35,7 @@ import * as fromTodos from '../../store/reducers/todos';
                 <input type="hidden" class="form-control" id="id" formControlName="id"/>
                 <input type="hidden" class="form-control" id="complete" formControlName="complete"/>
                 <div class="form-group">
-                  <input type="text" class="form-control" id="task" placeholder="task name" formControlName="task"/>
+                  <input type="text" class="form-control" id="caseName" placeholder="Case name" formControlName="caseName"/>
                 </div>
                 <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Save</button>
             </form>
@@ -75,7 +75,7 @@ export class AssessmentTagComponent implements OnInit {
     // crate reactive form
     this.form = this.formBuilder.group({
       id: [''],
-      task: ['', Validators.required],
+      caseName: ['', Validators.required],
       complete: ['']
     });
 
