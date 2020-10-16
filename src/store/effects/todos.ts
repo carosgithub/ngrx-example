@@ -8,7 +8,7 @@ import 'rxjs/add/operator/switchMap';
 import * as todo from '../actions/todo';
 
 @Injectable()
-export class TodoEffects {
+export class AssessmentEffects {
 
     /**
      * This type of effect is called Content-Based decider.

@@ -8,14 +8,14 @@ import { AssessmentTagComponent } from "./container/assessment.component";
 import { AssessmentComponent } from './components/assessment/assessment.component';
 import { AssessmentsComponent } from './components/assessments/assessments.component';
 
-import { TodoEffects } from "../store/effects/todos";
+import { AssessmentEffects } from "../store/effects/todos";
 import * as todos from "../store/reducers/todos";
 
 @NgModule({
   imports: [
     CommonModule,
     StoreModule.forFeature('todos', todos.reducer),
-    EffectsModule.forFeature([TodoEffects]),
+    EffectsModule.forFeature([AssessmentEffects]),
     ReactiveFormsModule
   ],
   declarations: [
