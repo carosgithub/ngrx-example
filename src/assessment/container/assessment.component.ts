@@ -83,8 +83,7 @@ export class AssessmentTagComponent implements OnInit {
     // subscribe to receive selected assessment
     this.store.select(fromSelectors.getSelectedAssessment).subscribe(assessment => {
       if (!assessment) return;
-
-      this.form.setValue(assessment);
+        this.form.setValue(assessment);
     });
   }
 
