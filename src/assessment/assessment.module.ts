@@ -8,8 +8,8 @@ import { AssessmentTagComponent } from "./container/assessment.component";
 import { AssessmentComponent } from './components/assessment/assessment.component';
 import { AssessmentsComponent } from './components/assessments/assessments.component';
 
-import { AssessmentEffects } from "../store/effects/todos";
-import * as todos from "../store/reducers/todos";
+import { AssessmentEffects } from "../store/effects/assessmentEffects";
+import * as todos from "../store/reducers/assessmentReducers";
 
 @NgModule({
   imports: [

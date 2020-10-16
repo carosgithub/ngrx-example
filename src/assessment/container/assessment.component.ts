@@ -11,8 +11,8 @@ import {
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Todo } from "../../models/assessment";
-import * as todo from '../../store/actions/todo'
-import * as fromTodos from '../../store/reducers/todos';
+import * as todo from '../../store/actions/assessmentActions'
+import * as fromTodos from '../../store/reducers/assessmentReducers';
 
 @Component({
   selector: 'assessment-tag',
