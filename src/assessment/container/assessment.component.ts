@@ -10,7 +10,7 @@ import {
 } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { Todo } from "../../models/todo";
+import { Todo } from "../../models/assessment";
 import * as todo from '../../store/actions/todo'
 import * as fromTodos from '../../store/reducers/todos';
 

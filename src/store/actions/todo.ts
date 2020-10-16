@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Todo } from "../../models/todo";
+import { Todo } from "../../models/assessment";
 
 /**
  * All the constants to define our actions

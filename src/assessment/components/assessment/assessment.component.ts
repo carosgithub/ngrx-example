@@ -3,7 +3,7 @@ import {
   Component,
   Input
 } from '@angular/core';
-import { Todo } from "../../../models/todo";
+import { Todo } from "../../../models/assessment";
 
 @Component({
   selector: 'app-todo',

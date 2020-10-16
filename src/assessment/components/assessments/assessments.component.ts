@@ -4,7 +4,7 @@ import {
   Input
 } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Todo } from "../../../models/todo";
+import { Todo } from "../../../models/assessment";
 import * as todo from '../../../store/actions/todo'
 import * as fromTodo from '../../../store/reducers/todos';
 
