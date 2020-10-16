@@ -10,8 +10,8 @@ import * as fromTodo from '../../../store/reducers/todos';
 
 @Component({
   selector: 'app-todos',
-  templateUrl: './todos.component.html',
-  styleUrls: ['./todos.component.scss'],
+  templateUrl: './assessments.component.html',
+  styleUrls: ['./assessments.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodosComponent {
