@@ -2,7 +2,7 @@ import { createSelector, createFeatureSelector } from '@ngrx/store';
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
 import { Assessment } from "../../models/assessment";
-import * as assessment from '../actions/assessmentActions';
+import * as fromActions from '../actions/assessmentActions';
 
 // create new state based on EntityState
 export interface State extends EntityState<Assessment> {
@@ -23,34 +23,34 @@ export const initialState: State = adapter.getInitialState({
 // this function is called after every execution of a action
 export function reducer(
     state = initialState,
-    action: assessment.Actions
+    action: fromActions.Actions
 ): State {
 
     switch(action.type) {
 
-        case assessment.ADD_QRTP_SUCCESS: {
+        case fromActions.ADD_QRTP_SUCCESS: {
             return adapter.addOne(action.assessment, state);
         }
 
-        case assessment.EDIT_QRTP: {
+        case fromActions.EDIT_QRTP: {
             return adapter.updateOne({
                 id: action.id,
                 changes: action.changes
             }, state);
         }
 
-        case assessment.DELETE_QRTP: {
+        case fromActions.DELETE_QRTP: {
             return adapter.removeOne(action.id, state);
         }
 
-        case assessment.COMPLETE_QRTP: {
+        case fromActions.COMPLETE_QRTP: {
             return adapter.updateOne({
                 id: action.id,
                 changes: { complete: !state.entities[action.id].complete }
             }, state);
         }
 
-        case assessment.SELECT_QRTP: {
+        case fromActions.SELECT_QRTP: {
             return {
                 ...state,
                 selectedAssessmentId: action.id

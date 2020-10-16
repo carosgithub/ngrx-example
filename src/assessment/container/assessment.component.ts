@@ -11,8 +11,8 @@ import {
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { Assessment } from "../../models/assessment";
-import * as assessment from '../../store/actions/assessmentActions'
-import * as fromTodos from '../../store/reducers/assessmentReducers';
+import * as fromActions from '../../store/actions/assessmentActions'
+import * as fromReducers from '../../store/reducers/assessmentReducers';
 
 @Component({
   selector: 'assessment-tag',
@@ -65,10 +65,10 @@ export class AssessmentTagComponent implements OnInit {
   form: FormGroup;
 
   constructor(
-    private store: Store<fromTodos.State>,
+    private store: Store<fromReducers.State>,
     private formBuilder: FormBuilder
   ) {
-    this.assessments = store.select(fromTodos.getAssessmentsAll);
+    this.assessments = store.select(fromReducers.getAssessmentsAll);
   }
 
   ngOnInit() {
@@ -80,7 +80,7 @@ export class AssessmentTagComponent implements OnInit {
     });
 
     // subscribe to receive selected assessment
-    this.store.select(fromTodos.getSelectedAssessment).subscribe(assessment => {
+    this.store.select(fromReducers.getSelectedAssessment).subscribe(assessment => {
       if (!assessment) return;
 
       this.form.setValue(assessment);
@@ -94,7 +94,7 @@ export class AssessmentTagComponent implements OnInit {
   onSubmit({value, valid}: {value: Assessment, valid: boolean}): void {
     if (valid) {
       // dispatch new action
-      this.store.dispatch(new assessment.Save(value));
+      this.store.dispatch(new fromActions.Save(value));
       this.form.reset();
     }
   }

@@ -5,7 +5,7 @@ import { of } from 'rxjs/observable/of';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/switchMap';
 
-import * as assessmentActions from '../actions/assessmentActions';
+import * as fromActions from '../actions/assessmentActions';
 
 @Injectable()
 export class AssessmentEffects {
@@ -17,14 +17,14 @@ export class AssessmentEffects {
      */
     @Effect()
     $save = this.actions
-        .ofType<assessmentActions.Save>(assessmentActions.SAVE_QRTP)
+        .ofType<fromActions.Save>(fromActions.SAVE_QRTP)
         .map(action => action.assessment)
         .switchMap(data => {
             let action: Action;
             if (!data.id) {
-                action = new assessmentActions.Add(data);
+                action = new fromActions.Add(data);
             } else {
-                action = new assessmentActions.Edit(data.id, data);
+                action = new fromActions.Edit(data.id, data);
             }
 
             return of(action);
@@ -36,14 +36,14 @@ export class AssessmentEffects {
      */
     @Effect()
     $add = this.actions
-        .ofType<assessmentActions.Add>(assessmentActions.ADD_QRTP)
+        .ofType<fromActions.Add>(fromActions.ADD_QRTP)
         .map(action => action.assessment)
         .switchMap((data) => {
             // this dumb implementation in real world can be a http request
             data.id = new Date().getMilliseconds();
             data.complete = false;
 
-            return of(new assessmentActions.AddTodoSuccess(data));
+            return of(new fromActions.AddTodoSuccess(data));
         });
 
     constructor(
