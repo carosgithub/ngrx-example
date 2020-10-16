@@ -4,17 +4,35 @@ import { Assessment } from "../../models/assessment";
 /**
  * All the constants to define our actions
  */
-export const SAVE_QRTP = '[QRTP] save assessment';
+export const LOAD_QRTP = '[QRTP] load assessments';
+export const LOAD_QRTP_FAIL = '[QRTP] load assessment fail';
+export const LOAD_QRTP_SUCCESS = '[QRTP] load assessment success';
 export const ADD_QRTP = '[QRTP] add assessment';
 export const ADD_QRTP_SUCCESS = '[QRTP] add assessment success';
 export const EDIT_QRTP = '[QRTP] edit assessment';
 export const DELETE_QRTP = '[QRTP] delete assessment';
+export const SAVE_QRTP = '[QRTP] save assessment';
 export const COMPLETE_QRTP = '[QRTP] done assessment';
 export const SELECT_QRTP = '[QRTP] select assessment';
 
 /**
  * Implementation of all actions that we are handle
  */
+
+export class LoadQRTPs implements Action {
+    readonly type = LOAD_QRTP;
+}
+
+export class LoadQRTPFail implements Action {
+  readonly type = LOAD_QRTP_FAIL;
+  constructor(public payload: any) {}
+}
+
+export class LoadQRTPSuccess implements Action {
+  readonly type = LOAD_QRTP_SUCCESS;
+  constructor(public payload: Assessment[]) {}
+}
+
 export class Save implements Action {
     readonly type = SAVE_QRTP;
 
@@ -27,7 +45,7 @@ export class Add implements Action {
     constructor(public assessment: Assessment) {}
 }
 
-export class AddTodoSuccess implements Action {
+export class AddAssessmentSuccess implements Action {
     readonly type = ADD_QRTP_SUCCESS;
 
     constructor(public assessment: Assessment) {}
@@ -58,9 +76,12 @@ export class Select implements Action {
 }
 
 export type Actions =
+                LoadQRTPs |
+                LoadQRTPFail |
+                LoadQRTPSuccess |
                 Save |
                 Add |
-                AddTodoSuccess |
+                AddAssessmentSuccess |
                 Edit |
                 Delete |
                 Complete |

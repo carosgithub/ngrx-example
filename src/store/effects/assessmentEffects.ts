@@ -43,7 +43,7 @@ export class AssessmentEffects {
             data.id = new Date().getMilliseconds();
             data.complete = false;
 
-            return of(new fromActions.AddTodoSuccess(data));
+            return of(new fromActions.AddAssessmentSuccess(data));
         });
 
     constructor(
